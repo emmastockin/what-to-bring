@@ -1,0 +1,12 @@
+@import 'partials/setup';
+@import 'partials/variables';
+@import 'partials/mixins';
+@import 'partials/map';
+@import 'partials/mainWindow';
+@import 'partials/resultsWindow';
+
+html {
+	font-size: 62.5%;
+	font-family: $secondaryFont;
+}
+

@@ -1,0 +1,165 @@
+.alcoholResults {
+	position: relative;
+	display: none;
+}
+
+//Just making result images smaller for now
+.resultItem .imageContain {
+	width:45%;
+	img {
+		max-width: 100%;
+		display: block;
+	}
+}
+
+form.results {
+	height: 100vh;
+	padding-top: 15px;
+	@include bp(lrg)
+		height: auto;
+}
+
+.resultsShow {
+	display: flex;
+	flex-wrap: wrap;
+	width: 80%;
+	margin: 0 auto;
+	justify-content: center;
+	align-items: center;
+	padding-top: 15px;
+	@include bp(xlrg){
+		width: 100%;
+	}
+}
+
+.choice {
+	font-family: $primaryFont;
+	color: $colorDk;
+	font-size: 2rem;
+	padding: 10px 15px 0 15px;
+	text-align: center;
+	p {
+		margin: 0;
+		padding: 30px 0 0 0;
+	}
+}
+
+.responsiveMessage {
+	font-family: $primaryFont;
+	color: $colorDk;
+	font-size: 1.5rem;
+	text-align: center;
+	display: none;
+	@include bp(med) {
+		display: block;
+	}
+}
+
+.chooseAlcohol {
+	display: none;
+}
+
+.resultItem {
+	display: flex;
+	margin: 5px 10px;
+	width: calc(33.3% - 20px);
+	height: 270px;
+	border: 5px solid white;
+	@include bp(lrg) {
+		width: calc(50% - 20px);
+		@include bp(sml) {
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+
+.resultsLabel {
+	display: flex;
+	// flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	border: 1px solid white;
+	outline: 5px solid $colorMd;
+	margin: 10px;
+	padding: 10px;
+	position: relative;
+	&:hover {
+		outline: 5px solid $colorDk;
+		transition: all 0.30s ease-in-out;
+	}
+}
+
+input[type="radio"]:checked ~ .resultsLabel {
+	outline: 5px solid $colorDk;
+}
+
+.resultsText {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.resultsText h2 {
+	font-size: 2rem;
+	margin: 0;
+}
+
+.alcoholResults__button--container {
+	display: flex;
+	justify-content: center;
+	padding: 20px 10px 40px 10px;
+	@include bp(sml) {
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+#confirm,#newSelection {
+	@include buttonStyles;
+	margin: 10px;
+	transition: all 0.30s ease-in-out;
+	@include bp(lrg) {
+		width: 70%;
+	}
+}
+
+// get manual user location
+.userLocationOverlay {
+	z-index: 999;
+	background: rgba(0, 0, 0, 0.7);
+	bottom: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+	position: absolute;
+	display: flex;
+	
+}
+
+#locationField {
+	margin: auto;
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	@include bp(med){
+		width: 95%;
+		margin: 60px auto 10px auto;
+	}
+}
+
+#autocomplete {
+	width: 50%;
+	padding: 10px;
+	font-size: 1.6rem;
+	@include bp(med) {
+		width: 100%;
+	}
+}
+
+#submitLocation {
+	@include buttonStyles();
+}
